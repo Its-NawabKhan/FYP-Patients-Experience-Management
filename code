@@ -100,11 +100,12 @@ void loop() {
     WiFiClient client;
     HTTPClient http;    //Declare object of class HTTPClient
 
-    String UIDresultSend, postData;
+    String UIDresultSend, postData, terminalID;
     UIDresultSend = StrUID;
+    terminalID = "a";
 
     //Post Data
-    postData = "UIDresult=" + UIDresultSend;
+    postData = "UIDresult=" + terminalID + UIDresultSend;
 
     http.begin(client,"http://192.168.18.35/NodeMCU-and-RFID-RC522-IoT-Projects/getUID.php");  //Specify request destination
     http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Specify content-type header
