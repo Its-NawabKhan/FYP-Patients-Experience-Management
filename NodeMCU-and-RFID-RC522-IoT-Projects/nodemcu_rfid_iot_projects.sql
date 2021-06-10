@@ -10,7 +10,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "+05:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -33,8 +33,8 @@ CREATE TABLE `table_the_iot_projects` (
   `id` varchar(100) NOT NULL,
   `gender` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `mobile` varchar(100) NOT NULL,
-  `time_stamp` datetime
+  `mobile` varchar(100) NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

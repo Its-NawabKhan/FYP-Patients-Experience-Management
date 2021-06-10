@@ -19,7 +19,7 @@
 		// Database::disconnect(); 
 		// $pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "UPDATE patreg SET card_id=? WHERE email=?";
+		$sql = "UPDATE patreg SET card_id=RIGHT(?, 8) WHERE email=?";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($id, $email));
 		################

@@ -7,16 +7,19 @@
      
     $pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = "SELECT * FROM table_the_iot_projects where id = ?";
+	$sql = "SELECT * FROM patreg where card_id = RIGHT(?, 8)";
 	$q = $pdo->prepare($sql);
 	$q->execute(array($id));
 	$data = $q->fetch(PDO::FETCH_ASSOC);
+	$current_timeval = date('y-m-d h:i:s');
+	$sql = "INSERT INTO `time_record` (`terminal`, `card_id`, `time`) VALUES(LEFT(?, 1), RIGHT(?, 8), ?)";
+	$q = $pdo->prepare($sql);
+	$q->execute(array($id, $id, $current_timeval));
 	Database::disconnect();
-	
 	$msg = null;
 	if (null==$data['name']) {
 		$msg = "The ID of your Card / KeyChain is not registered !!!";
-		$data['id']=$id;
+		$data['id']=substr($id, -8);
 		$data['name']="--------";
 		$data['gender']="--------";
 		$data['email']="--------";
