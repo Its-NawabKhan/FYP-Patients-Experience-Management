@@ -3,8 +3,8 @@
     $email = null;
     
 
-    if ( !empty($_GET['email'])) {
-        $email = $_REQUEST['email'];
+    if ( !empty($_GET['email2'])) {
+        $email = $_REQUEST['email2'];
     }
      
     $pdo = Database::connect();
@@ -12,20 +12,21 @@
 
     // if ( !empty($_POST)) {
         // keep track post values
-        // $id = $_POST['id'];
-    $name = $_POST['name'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
 	$gender = $_POST['gender'];
-	$mobile = $_POST['mobile']; 
+	$mobile = $_POST['mobile'];
+	$email2 = $_POST['email']; 
         // delete data
       
-    $sql = "UPDATE patreg set fname= ?, gender= ?, contact= ? where email= ?";
+    $sql = "UPDATE patreg set fname= ?, lname= ?, gender= ?, contact= ?, email= ? where email= ?";
 	$q = $pdo->prepare($sql);
-	$q->execute(array($name, $gender, $mobile, $email));
+	$q->execute(array($fname, $lname, $gender, $mobile, $email2, $email));
 	    // }
 
 	$sql = "SELECT * FROM patreg where email = ? ";
 	$q = $pdo->prepare($sql);
-	$q->execute(array($email));
+	$q->execute(array($email2));
 	$data = $q->fetch(PDO::FETCH_ASSOC);
 	Database::disconnect();
 
@@ -120,7 +121,7 @@
 					<p id="defaultGender" hidden><?php echo $data['gender'];?></p>
 				</div>
 		 
-				<form class="form-horizontal" action="user data edit tb.php?email=<?php echo $email?>" method="post">
+				<form class="form-horizontal" action="user data edit tb.php?email2=<?php echo $email?>" method="post">
 					<div class="control-group">
 						<label class="control-label">ID</label>
 						<div class="controls">
@@ -129,9 +130,16 @@
 					</div>
 					
 					<div class="control-group">
-						<label class="control-label">Name</label>
+						<label class="control-label">F Name</label>
 						<div class="controls">
-							<input name="name" type="text"  placeholder="" value="<?php echo $data['fname'];?>" required>
+							<input name="fname" type="text"  placeholder="" value="<?php echo $data['fname'];?>" required>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label">L Name</label>
+						<div class="controls">
+							<input name="lname" type="text"  placeholder="" value="<?php echo $data['lname'];?>" required>
 						</div>
 					</div>
 					
@@ -148,7 +156,7 @@
 					<div class="control-group">
 						<label class="control-label">Email Address</label>
 						<div class="controls">
-							<input name="email" type="text" placeholder="" value="<?php echo $data['email'];?>" readonly>
+							<input name="email" type="text" placeholder="" value="<?php echo $data['email'];?>" required>
 						</div>
 					</div>
 					
@@ -161,7 +169,7 @@
 					
 					<div class="form-actions">
 						<button type="submit" class="btn btn-success">Update</button>
-						<a class="btn" href="user data.php">Back</a>
+						<a class="btn" href="user data.php">Finish Edit</a>
 					</div>
 				</form>
 			</div>               

@@ -117,7 +117,7 @@
 					<p id="defaultGender" hidden><?php echo $data['gender'];?></p>
 				</div>
 		 
-				<form class="form-horizontal" action="user data edit tb.php?email=<?php echo $email1?>" method="post">
+				<form class="form-horizontal" action="user data edit tb.php?email2=<?php echo $email1?>" method="post">
 					<div class="control-group">
 						<label class="control-label" >ID</label>
 						<div class="controls">
@@ -126,9 +126,16 @@
 					</div>
 					
 					<div class="control-group">
-						<label class="control-label">Name</label>
+						<label class="control-label">F Name</label>
 						<div class="controls">
-							<input name="name" type="text"  placeholder="" value="<?php echo $data['fname'];?>" required>
+							<input name="fname" type="text"  placeholder="" value="<?php echo $data['fname'];?>" required>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label">L Name</label>
+						<div class="controls">
+							<input name="lname" type="text"  placeholder="" value="<?php echo $data['lname'];?>" required>
 						</div>
 					</div>
 					
@@ -145,7 +152,7 @@
 					<div class="control-group">
 						<label class="control-label">Email Address</label>
 						<div class="controls">
-							<input name="email" type="text" placeholder="" value="<?php echo $data['email'];?>" readonly>
+							<input name="email" type="text" placeholder="" value="<?php echo $data['email'];?>" required>
 						</div>
 					</div>
 					
