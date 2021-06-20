@@ -1,15 +1,24 @@
 <?php
     require 'database.php';
-    $id = null;
+    $email1 = null;
+    // $id = null;
     if ( !empty($_GET['id'])) {
-        $id = $_REQUEST['id'];
+        $email1 = $_REQUEST['id'];
+
     }
+
+    // if ( !empty($_GET['id'])) {
+
+        // $id1 = $_REQUEST['id'];
+    // }
+
+
      
     $pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = "SELECT * FROM table_the_iot_projects where id = ?";
+	$sql = "SELECT * FROM patreg where email = ?";
 	$q = $pdo->prepare($sql);
-	$q->execute(array($id));
+	$q->execute(array($email1));
 	$data = $q->fetch(PDO::FETCH_ASSOC);
 	Database::disconnect();
 ?>
@@ -63,36 +72,63 @@
 			ul.topnav li.right, 
 			ul.topnav li {float: none;}
 		}
+
+		body {
+			background-image: url("img2.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		h3 {
+  			color: #030303;
+  			font-family: Times New Roman;
+  			font-size: 200%;
+  			padding-bottom: 7%;  			
+		}
+		h2 {
+  			font-family: Times New Roman;
+  			font-size: 250%;
+
+		}
+
+		form{
+			background-color: white;
+		}
+		/*.control-group{*/
+			/*padding-top: 34%%;*/
+
+		/*}*/
+
 		</style>
 		
-		<title>Edit : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+		<title>Edit</title>
 		
 	</head>
 	
 	<body>
 
-		<h2 align="center">NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		<h2 align="center">Shifa International Hospital: Care with Compassion</h2>
 		
 		<div class="container">
      
 			<div class="center" style="margin: 0 auto; width:495px; border-style: solid; border-color: #f2f2f2;">
 				<div class="row">
-					<h3 align="center">Edit User Data</h3>
+					<h3 align="center">Edit Patient Data</h3>
 					<p id="defaultGender" hidden><?php echo $data['gender'];?></p>
 				</div>
 		 
-				<form class="form-horizontal" action="user data edit tb.php?id=<?php echo $id?>" method="post">
+				<form class="form-horizontal" action="user data edit tb.php?email=<?php echo $email1?>" method="post">
 					<div class="control-group">
-						<label class="control-label">ID</label>
+						<label class="control-label" >ID</label>
 						<div class="controls">
-							<input name="id" type="text"  placeholder="" value="<?php echo $data['id'];?>" readonly>
+							<input name="id" type="text"  placeholder="" value="<?php echo $data['card_id'];?>" readonly>
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label">Name</label>
 						<div class="controls">
-							<input name="name" type="text"  placeholder="" value="<?php echo $data['name'];?>" required>
+							<input name="name" type="text"  placeholder="" value="<?php echo $data['fname'];?>" required>
 						</div>
 					</div>
 					
@@ -109,14 +145,14 @@
 					<div class="control-group">
 						<label class="control-label">Email Address</label>
 						<div class="controls">
-							<input name="email" type="text" placeholder="" value="<?php echo $data['email'];?>" required>
+							<input name="email" type="text" placeholder="" value="<?php echo $data['email'];?>" readonly>
 						</div>
 					</div>
 					
 					<div class="control-group">
 						<label class="control-label">Mobile Number</label>
 						<div class="controls">
-							<input name="mobile" type="text"  placeholder="" value="<?php echo $data['mobile'];?>" required>
+							<input name="mobile" type="text"  placeholder="" value="<?php echo $data['contact'];?>" required>
 						</div>
 					</div>
 					

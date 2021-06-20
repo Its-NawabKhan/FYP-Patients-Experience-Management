@@ -62,23 +62,40 @@
 			padding-top: 12px;
 			padding-bottom: 12px;
 		}
+		body {
+			background-image: url("img2.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		h3 {
+  			color: #030303;
+  			font-family: Times New Roman;
+  			font-size: 200%;
+  			padding-bottom: 7%;  			
+		}
+		h2 {
+  			font-family: Times New Roman;
+  			font-size: 250%;
+
+		}
 		</style>
 		
-		<title>Read Tag : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+		<title>Read Tag ID</title>
 	</head>
 	
 	<body>
-		<h2 align="center">NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		<h2 align="center">Shifa International Hospital: Care with Compassion</h2>
 		<ul class="topnav">
 			<li><a href="home.php">Home</a></li>
 			<li><a href="user data.php">User Data</a></li>
-			<li><a href="registration.php">Registration</a></li>
+			<li><a href="registration.php">Card Allotment</a></li>
 			<li><a class="active" href="read tag.php">Read Tag ID</a></li>
 		</ul>
 		
 		<br>
 		
-		<h3 align="center" id="blink">Please Scan Tag to Display ID or User Data</h3>
+		<h3 align="center" id="blink">Please Scan Tag/RFID Card to Display ID or Patient Data</h3>
 		
 		<p id="getUID" hidden></p>
 		
@@ -89,7 +106,7 @@
 				<table  width="452" border="1" bordercolor="#10a0c5" align="center"  cellpadding="0" cellspacing="1"  bgcolor="#000" style="padding: 2px">
 					<tr>
 						<td  height="40" align="center"  bgcolor="#10a0c5"><font  color="#FFFFFF">
-							<b>User Data</b>
+							<b>Patient Data</b>
 							</font>
 						</td>
 					</tr>

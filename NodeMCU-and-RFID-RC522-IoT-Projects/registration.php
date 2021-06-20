@@ -15,10 +15,10 @@
 		<script>
 			$(document).ready(function(){
 				 $("#getUID").load("UIDContainer.php");
-				setInterval(function() {
+					setInterval(function() {
 					$("#getUID").load("UIDContainer.php");
-				}, 500);
-			});
+											}, 500);
+										});
 		</script>
 		
 		<style>
@@ -61,18 +61,38 @@
 			ul.topnav li.right, 
 			ul.topnav li {float: none;}
 		}
+		body {
+			background-image: url("img2.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		h3 {
+  			color: #030303;
+  			font-family: Times New Roman;
+  			font-size: 200%;
+  			padding-bottom: 7%;  			
+		}
+		h2 {
+  			font-family: Times New Roman;
+  			font-size: 250%;
+
+		}
+		div.center{
+			background-color: white;
+		}
 		</style>
 		
-		<title>Registration : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+		<title>Card Allotment</title>
 	</head>
 	
 	<body>
 
-		<h2 align="center">NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		<h2 align="center">Shifa International Hospital: Care with Compassion</h2>
 		<ul class="topnav">
 			<li><a href="home.php">Home</a></li>
 			<li><a href="user data.php">User Data</a></li>
-			<li><a class="active" href="registration.php">Registration</a></li>
+			<li><a class="active" href="registration.php">Card Allotment</a></li>
 			<li><a href="read tag.php">Read Tag ID</a></li>
 		</ul>
 
@@ -80,7 +100,7 @@
 			<br>
 			<div class="center" style="margin: 0 auto; width:495px; border-style: solid; border-color: #f2f2f2;">
 				<div class="row">
-					<h3 align="center">Registration Form</h3>
+					<h3 align="center">Allotment Form</h3>
 				</div>
 				<br>
 				<form class="form-horizontal" action="insertDB.php" method="post" >
@@ -91,14 +111,14 @@
 						</div>
 					</div>
 					
-					<div class="control-group">
+					<!-- <div class="control-group">
 						<label class="control-label">Name</label>
 						<div class="controls">
 							<input id="div_refresh" name="name" type="text"  placeholder="" required>
 						</div>
-					</div>
+					</div> -->
 					
-					<div class="control-group">
+					<!-- <div class="control-group">
 						<label class="control-label">Gender</label>
 						<div class="controls">
 							<select name="gender">
@@ -107,7 +127,7 @@
 							</select>
 						</div>
 					</div>
-					
+					 -->
 					<div class="control-group">
 						<label class="control-label">Email Address</label>
 						<div class="controls">
@@ -115,13 +135,13 @@
 						</div>
 					</div>
 					
-					<div class="control-group">
+					<!-- <div class="control-group">
 						<label class="control-label">Mobile Number</label>
 						<div class="controls">
 							<input name="mobile" type="text"  placeholder="" required>
 						</div>
 					</div>
-					
+					 -->
 					<div class="form-actions">
 						<button type="submit" class="btn btn-success">Save</button>
                     </div>

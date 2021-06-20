@@ -57,17 +57,40 @@
 		thead {
 			color: #FFFFFF;
 		}
+/*---here---*/
+
+		body {
+			background-image: url("img2.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		h3 {
+  			color: #030303;
+  			font-family: Times New Roman;
+  			font-size: 200%;
+  			padding-bottom: 7%;  	
+  					
+		}
+		h2 {
+  			font-family: Times New Roman;
+  			font-size: 250%;
+
+		}
+		tbody {
+			background-color: whitesmoke;
+		}
 		</style>
 		
-		<title>User Data : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+		<title>User Data</title>
 	</head>
 	
 	<body>
-		<h2>NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+		<h2>Shifa International Hospital: Care with Compassion</h2>
 		<ul class="topnav">
 			<li><a href="home.php">Home</a></li>
 			<li><a class="active" href="user data.php">User Data</a></li>
-			<li><a href="registration.php">Registration</a></li>
+			<li><a href="registration.php">Card Allotment</a></li>
 			<li><a href="read tag.php">Read Tag ID</a></li>
 		</ul>
 		<br>
@@ -79,8 +102,9 @@
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr bgcolor="#10a0c5" color="#FFFFFF">
-                      <th>Name</th>
-                      <th>ID</th>
+                      <th>F Name</th>
+                      <th>L Name</th>
+                      <th>Card ID</th>
 					  <th>Gender</th>
 					  <th>Email</th>
                       <th>Mobile Number</th>
@@ -88,20 +112,24 @@
                     </tr>
                   </thead>
                   <tbody>
+                  	<!-- ORDER BY `fname` ASC  -->
                   <?php
                    include 'database.php';
                    $pdo = Database::connect();
-                   $sql = 'SELECT * FROM table_the_iot_projects ORDER BY name ASC';
+                   // $sql = 'SELECT * FROM table_the_iot_projects ORDER BY name ASC';
+                   $sql = 'SELECT * FROM `patreg` ORDER BY `card_id` ASC';
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
-                            echo '<td>'. $row['name'] . '</td>';
-                            echo '<td>'. $row['id'] . '</td>';
+                            echo '<td>'. $row['fname'] . '</td>';
+                            echo '<td>'. $row['lname'] . '</td>';
+                            echo '<td>'. $row['card_id'] . '</td>';
                             echo '<td>'. $row['gender'] . '</td>';
 							echo '<td>'. $row['email'] . '</td>';
-							echo '<td>'. $row['mobile'] . '</td>';
-							echo '<td><a class="btn btn-success" href="user data edit page.php?id='.$row['id'].'">Edit</a>';
+							echo '<td>'. $row['contact'] . '</td>';
+							echo '<td><a class="btn btn-success" href="user data edit page.php?id='.$row['email'].'">Edit</a>';
+							// echo '<td><a class="btn btn-success" href="updateDB.php?id='.$row['email'].'">Edit</a>';
 							echo ' ';
-							echo '<a class="btn btn-danger" href="user data delete page.php?id='.$row['id'].'">Delete</a>';
+							echo '<a class="btn btn-danger" href="user data delete page.php?id='.$row['email'].'">Delete</a>';
 							echo '</td>';
                             echo '</tr>';
                    }
