@@ -6,8 +6,13 @@ if(isset($_POST['btnSubmit']))
 	$email = $_POST['txtEmail'];
 	$contact = $_POST['txtPhone'];
 	$message = $_POST['txtMsg'];
+	$message1 = $_POST['cleanliness'];
+	$message2 = $_POST['staff_behaviour'];
+	$message3 = $_POST['doctor_behaviour'];
+	$message4 = $_POST['visit'];
 
-	$query="insert into contact(name,email,contact,message) values('$name','$email','$contact','$message');";
+
+	$query="insert into contact(name,email,contact,message, cleanliness, staff_behaviour, doctor_behaviour, visit) values('$name','$email','$contact','$message','$message1','$message2','$message3','$message4');";
 	$result = mysqli_query($con,$query);
 	
 	if($result)
@@ -18,3 +23,7 @@ if(isset($_POST['btnSubmit']))
 		echo '</script>';
     }
 }
+
+
+
+

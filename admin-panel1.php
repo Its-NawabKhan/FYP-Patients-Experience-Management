@@ -139,7 +139,7 @@ if(isset($_POST['docsub1']))
       <a class="list-group-item list-group-item-action" href="#list-settings" id="list-adoc-list"  role="tab" data-toggle="list" aria-controls="home">Add Doctor</a>
       <a class="list-group-item list-group-item-action" href="#list-settings1" id="list-ddoc-list"  role="tab" data-toggle="list" aria-controls="home">Delete Doctor</a>
       <a class="list-group-item list-group-item-action" href="#list-mes" id="list-mes-list"  role="tab" data-toggle="list" aria-controls="home">Queries</a>
-      <a class="list-group-item list-group-item-action" href="#list-mes" id="list-mes-list"  role="tab" data-toggle="list" aria-controls="home">Queries</a>
+      <a class="list-group-item list-group-item-action" href="#list-graph" id="list-graph-list"  role="tab" data-toggle="list" aria-controls="home">Trends & Data Graphs</a>
       
     </div><br>
   </div>
@@ -557,6 +557,12 @@ if(isset($_POST['docsub1']))
                     <th scope="col">Email</th>
                     <th scope="col">Contact</th>
                     <th scope="col">Message</th>
+                    <th scope="col">Cleanliness Rating</th>
+                    <th scope="col">Staff Behaviour Rating</th>
+                    <th scope="col">Doctor Behaviour Rating</th>
+                    <th scope="col">Hospital Visit Rating</th>
+
+
                   </tr>
                 </thead>
                 <tbody>
@@ -579,12 +585,34 @@ if(isset($_POST['docsub1']))
                         <td><?php echo $row['email'];?></td>
                         <td><?php echo $row['contact'];?></td>
                         <td><?php echo $row['message'];?></td>
+                        <td><?php echo $row['cleanliness'];?></td>
+                        <td><?php echo $row['staff_behaviour'];?></td>
+                        <td><?php echo $row['doctor_behaviour'];?></td>
+                        <td><?php echo $row['visit'];?></td>
+
                       </tr>
                     <?php } ?>
                 </tbody>
               </table>
         <br>
       </div>
+
+      <!-- graph div from here--------------------------- -->
+
+      <div class="tab-pane fade" id="list-graph" role="tabpanel" aria-labelledby="list-graph-list">
+        
+            <?php 
+
+              $command = escapeshellcmd('C:\xampp\htdocs\FYP_main_folder\Fyp_Bokeh.py');
+              $output = shell_exec($command);
+              echo $output;
+
+            ?>
+      </div>
+<!-- till here ---------------------- -->
+
+
+
 
 
 

@@ -90,7 +90,12 @@ CREATE TABLE `contact` (
   `name` varchar(30) NOT NULL,
   `email` text NOT NULL,
   `contact` varchar(10) NOT NULL,
-  `message` varchar(200) NOT NULL
+  `message` varchar(200) NOT NULL,
+  `cleanliness` varchar(2) NOT NULL,
+  `staff_behaviour` varchar(2) NOT NULL,
+  `doctor_behaviour` varchar(2) NOT NULL,
+  `visit` varchar(2) NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
