@@ -139,7 +139,7 @@ if(isset($_POST['docsub1']))
       <a class="list-group-item list-group-item-action" href="#list-settings" id="list-adoc-list"  role="tab" data-toggle="list" aria-controls="home">Add Doctor</a>
       <a class="list-group-item list-group-item-action" href="#list-settings1" id="list-ddoc-list"  role="tab" data-toggle="list" aria-controls="home">Delete Doctor</a>
       <a class="list-group-item list-group-item-action" href="#list-mes" id="list-mes-list"  role="tab" data-toggle="list" aria-controls="home">Queries</a>
-      <a class="list-group-item list-group-item-action" href="#list-graph" id="list-graph-list"  role="tab" data-toggle="list" aria-controls="home">Trends & Data Graphs</a>
+      <a class="list-group-item list-group-item-action" href="#list-graph" id="script" role="tab" onclick="goPython()" aria-controls="home">Trends & Data Graphs</a>
       
     </div><br>
   </div>
@@ -599,7 +599,21 @@ if(isset($_POST['docsub1']))
 
       <!-- graph div from here--------------------------- -->
 
-      <div class="tab-pane fade" id="list-graph" role="tabpanel" aria-labelledby="list-graph-list">
+      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+      <script>
+          function goPython(){
+              $.ajax({
+                url: "MYSCRIPT.py",
+               context: document.body
+              }).done(function() {
+               alert('finished python script');;
+              });
+          }
+      </script>
+
+
+      <!-- <div class="tab-pane fade" id="list-graph" role="tabpanel" aria-labelledby="list-graph-list">
         
             <?php 
 
@@ -608,7 +622,7 @@ if(isset($_POST['docsub1']))
               echo $output;
 
             ?>
-      </div>
+      </div> -->
 <!-- till here ---------------------- -->
 
 
