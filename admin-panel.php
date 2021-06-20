@@ -32,7 +32,7 @@ if(isset($_POST['app-submit']))
   $appdate=$_POST['appdate'];
   $apptime=$_POST['apptime'];
   $cur_date = date("Y-m-d");
-  date_default_timezone_set('Asia/Kolkata');
+  date_default_timezone_set('Asia/Karachi');
   $cur_time = date("H:i:s");
   $apptime1 = strtotime($apptime);
   $appdate1 = strtotime($appdate);
@@ -80,7 +80,7 @@ if(isset($_GET['cancel']))
 
 
 function generate_bill(){
-  $con=mysqli_connect("localhost","root","","myhmsdb");
+  $con=mysqli_connect("localhost","root","","rfid_db");
   $pid = $_SESSION['pid'];
   $output='';
   $query=mysqli_query($con,"select p.pid,p.ID,p.fname,p.lname,p.doctor,p.appdate,p.apptime,p.disease,p.allergy,p.prescription,a.docFees from prestb p inner join appointmenttb a on p.ID=a.ID and p.pid = '$pid' and p.ID = '".$_GET['ID']."'");
@@ -126,7 +126,7 @@ if(isset($_GET["generate_bill"])){
 
   $content .= '
       <br/>
-      <h2 align ="center"> Global Hospitals</h2></br>
+      <h2 align ="center"> Shifa International Hospital</h2></br>
       <h3 align ="center"> Bill</h3>
       
 
@@ -140,7 +140,7 @@ if(isset($_GET["generate_bill"])){
 }
 
 function get_specs(){
-  $con=mysqli_connect("localhost","root","","myhmsdb");
+  $con=mysqli_connect("localhost","root","","rfid_db");
   $query=mysqli_query($con,"select username,spec from doctb");
   $docarray = array();
     while($row =mysqli_fetch_assoc($query))
@@ -178,7 +178,7 @@ function get_specs(){
     
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <a class="navbar-brand" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Global Hospital </a>
+  <a class="navbar-brand" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Shifa International Hospital </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -309,7 +309,7 @@ function get_specs(){
                   
                   <!-- <?php
 
-                        $con=mysqli_connect("localhost","root","","myhmsdb");
+                        $con=mysqli_connect("localhost","root","","rfid_db");
                         $query=mysqli_query($con,"select username,spec from doctb");
                         $docarray = array();
                           while($row =mysqli_fetch_assoc($query))
@@ -466,7 +466,7 @@ function get_specs(){
                 <tbody>
                   <?php 
 
-                    $con=mysqli_connect("localhost","root","","myhmsdb");
+                    $con=mysqli_connect("localhost","root","","rfid_db");
                     global $con;
 
                     $query = "select ID,doctor,docFees,appdate,apptime,userStatus,doctorStatus from appointmenttb where fname ='$fname' and lname='$lname';";
@@ -542,7 +542,7 @@ function get_specs(){
                 <tbody>
                   <?php 
 
-                    $con=mysqli_connect("localhost","root","","myhmsdb");
+                    $con=mysqli_connect("localhost","root","","rfid_db");
                     global $con;
 
                     $query = "select doctor,ID,appdate,apptime,disease,allergy,prescription from prestb where pid='$pid';";

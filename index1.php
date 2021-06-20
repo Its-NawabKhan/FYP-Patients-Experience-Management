@@ -4,6 +4,7 @@ include("header.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Shifa International</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,29 +28,36 @@ include("header.php");
     border-bottom-left-radius: 5% 5%;
     border-top-right-radius: 5% 5%;
     border-bottom-right-radius: 5% 5%;
-}
 
+}
+body {
+            background-image: url("img2.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
   </style>
-  <body style="background: -webkit-linear-gradient(left, #3931af, #00c6ff); background-size: cover;">
+<!--   <body style="background: -webkit-linear-gradient(left, #3931af, #00c6ff); background-size: cover;"> -->
+ <body >
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
     <div class="container">
 
-      <a class="navbar-brand js-scroll-trigger" href="index.php" style="margin-top: 10px;margin-left:-65px;font-family: 'IBM Plex Sans', sans-serif;"><h4><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp Shifa International HOSPITALS</h4></a>
+      <a class="navbar-brand js-scroll-trigger" href="index.php" style="color: green; margin-top: 10px;margin-left:-65px;font-family: 'IBM Plex Sans', sans-serif;"><h4><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp Shifa International HOSPITALS</h4></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" style="margin-right: 40px;">
-            <a class="nav-link js-scroll-trigger" href="index.php" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>HOME</h6></a>
+            <a class="nav-link js-scroll-trigger" href="index.php" style="color: green;font-family: 'IBM Plex Sans', sans-serif;"><h6>HOME</h6></a>
           </li>
   
           <li class="nav-item" style="margin-right: 40px;">
-            <a class="nav-link js-scroll-trigger" href="services.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>ABOUT US</h6></a>
+            <a class="nav-link js-scroll-trigger" href="services.html" style="color: green;font-family: 'IBM Plex Sans', sans-serif;"><h6>ABOUT US</h6></a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="contact.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>CONTACT</h6></a>
+            <a class="nav-link js-scroll-trigger" href="contact.html" style="color: green;font-family: 'IBM Plex Sans', sans-serif;"><h6>CONTACT</h6></a>
           </li>
         </ul>
       </div>
@@ -66,11 +74,11 @@ include("header.php");
          <div class="col-md-7" style="padding-left: 180px; ">
                  <div style="-webkit-animation: mover 2s infinite alternate;
     animation: mover 1s infinite alternate;">
-          <img src="images/ambulance1.png" alt="" style="width: 20%;padding-left: 40px;margin-top: 150px;margin-left: 45px;margin-bottom:15px">
+          <img src="logo.jpg" alt="" style="width: 25%;padding-left: 40px;margin-top: 150px;margin-left: 50px;margin-bottom:15px">
       </div>
 
       <div style="color: white;">
-            <h4 style="font-family: 'IBM Plex Sans', sans-serif;"> We are here for you!</h4>
+            <h4 style="font-family: 'IBM Plex Sans', sans-serif; color: green;margin-left: 50px"> We are here for you!</h4>
           </div>
 
          </div>
